@@ -11,7 +11,7 @@ export function Home() {
   const [games, setGames] = useState<GameCardProps[]>([]);
 
   useEffect(() => {
-    fetch('http://172.18.127.179:3333/games')
+    fetch('https://nlw-esports-server-backend.herokuapp.com/games')
       .then(response => response.json())
       .then(data => setGames(data))
       .catch((error) => {
