@@ -1,15 +1,18 @@
+import { TouchableOpacity, View, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useRoute, useNavigation } from '@react-navigation/native'
-import { Background } from '../../components/Background'
 import { Entypo } from '@expo/vector-icons'
 
 import logoImg from '../../assets/logo-nlw-esports.png'
 
 import { styles } from './styles'
-import { GameParams } from '../../@types/navigation'
-import { TouchableOpacity, View, Image } from 'react-native'
 import { THEME } from '../../theme'
+
+import { GameParams } from '../../@types/navigation'
+
+import { Background } from '../../components/Background'
 import { Heading } from '../../components/Heading'
+import { DuoCard } from '../../components/DuoCard'
 
 export function Game() {
 
@@ -53,6 +56,8 @@ export function Game() {
           title={game.title}
           subtitle='Conecte-se e comece a jogar!'
         />
+
+        <DuoCard />
 
       </SafeAreaView>
     </Background>
