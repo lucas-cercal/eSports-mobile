@@ -1,6 +1,9 @@
-import { View } from 'react-native';
+import { TouchableOpacity, View, Text } from 'react-native';
+import { GameController } from 'phosphor-react-native'
+
 import { DuoInfo } from '../DuoInfo';
 
+import { THEME } from '../../theme';
 import { styles } from './styles';
 
 export interface DuoCardProps {
@@ -34,9 +37,23 @@ export function DuoCard({ data }: Props) {
       />
       <DuoInfo
         label='Chamada de áudio?'
-        value='Sim'
-        colorValue="green"
+        value={data.useVoiceChannel ? "Sim" : "Não"}
+        colorValue={data.useVoiceChannel ? THEME.COLORS.SUCCESS : THEME.COLORS.ALERT}
       />
+
+      <TouchableOpacity
+        style={styles.button}
+      >
+        <GameController 
+          color={THEME.COLORS.TEXT}
+          size={20}
+        />
+
+        <Text style={styles.buttonTitle}>
+          Conectar
+        </Text>
+        
+      </TouchableOpacity>
     </View>
   );
 }
